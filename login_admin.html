@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Admin - HIMA SI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #0d1b2a;
+            --accent-color: #415a77;
+            --text-light: #e0e1dd;
+            --danger: #e63946;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+        body {
+            background-color: var(--primary-color);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Hiasan Background */
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            z-index: 0;
+        }
+        .c1 { width: 300px; height: 300px; top: -50px; left: -50px; }
+        .c2 { width: 500px; height: 500px; bottom: -100px; right: -100px; }
+
+        .login-container {
+            background: white;
+            width: 400px;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            text-align: center;
+            z-index: 1;
+            position: relative;
+        }
+
+        .login-header img {
+            width: 80px;
+            margin-bottom: 10px;
+        }
+
+        .login-header h2 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .login-header p {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-wrapper i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #aaa;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px 12px 40px; /* padding left besar untuk icon */
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .form-group input:focus {
+            border-color: var(--accent-color);
+            outline: none;
+            box-shadow: 0 0 5px rgba(65, 90, 119, 0.3);
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 12px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-login:hover {
+            background: var(--accent-color);
+        }
+
+        .error-msg {
+            color: var(--danger);
+            font-size: 13px;
+            margin-top: 10px;
+            display: none; /* Hidden by default */
+        }
+
+        .back-link {
+            display: block;
+            margin-top: 20px;
+            font-size: 13px;
+            color: #777;
+            text-decoration: none;
+        }
+        .back-link:hover { color: var(--accent-color); }
+
+    </style>
+</head>
+<body>
+
+    <div class="circle c1"></div>
+    <div class="circle c2"></div>
+
+    <div class="login-container">
+        <div class="login-header">
+            <img src="image/LOGO HIMA SI BARU.png" alt="Logo HIMA">
+            <h2>Admin Login</h2>
+            <p>Silakan masuk untuk mengelola data.</p>
+        </div>
+
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="username" placeholder="Masukkan username" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" placeholder="Masukkan password" required>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-login">Masuk</button>
+            <p id="errorMsg" class="error-msg"><i class="fas fa-exclamation-circle"></i> Username atau Password salah!</p>
+        </form>
+
+        <a href="index.html" class="back-link">&larr; Kembali ke Beranda</a>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        const errorMsg = document.getElementById('errorMsg');
+
+        // --- KONFIGURASI AKUN (Sederhana) ---
+        // PENTING: Karena ini JS Client-Side, password ini bisa dilihat lewat Inspect Element.
+        // Untuk proyek kuliah/organisasi sederhana ini oke, tapi tidak untuk data sensitif.
+        const VALID_USER = "admin";
+        const VALID_PASS = "himasi2026"; 
+
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Mencegah reload halaman
+            
+            const user = document.getElementById('username').value;
+            const pass = document.getElementById('password').value;
+
+            // Validasi Login
+            if (user === VALID_USER && pass === VALID_PASS) {
+                // Simpan status login di Session Storage browser
+                // Data ini akan hilang jika browser ditutup (lebih aman)
+                sessionStorage.setItem('isAdminLoggedIn', 'true');
+                
+                // Ubah teks tombol jadi loading
+                const btn = document.querySelector('.btn-login');
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Memuat...';
+                
+                // Redirect ke halaman admin
+                setTimeout(() => {
+                    window.location.href = 'admin.html'; // Pastikan nama file admin Anda sesuai
+                }, 1000);
+            } else {
+                // Tampilkan pesan error dengan animasi
+                errorMsg.style.display = 'block';
+                // Shake animation effect
+                const container = document.querySelector('.login-container');
+                container.style.animation = 'shake 0.5s';
+                setTimeout(() => container.style.animation = '', 500);
+            }
+        });
+
+        // Cek jika sudah login, langsung lempar ke admin (Opsional)
+        if(sessionStorage.getItem('isAdminLoggedIn') === 'true') {
+            // window.location.href = 'admin.html'; 
+            // Baris di atas dikomentari agar Anda bisa tes halaman loginnya dulu.
+        }
+
+    </script>
+
+    <style>
+        /* Animasi Shake untuk error */
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+    </style>
+</body>
+</html>
