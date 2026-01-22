@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HIMA SI - Kabinet Cakrawala</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+   <nav class="navbar">
+        <div class="nav-brand">
+            <img src="LOGO HIMA SI BARU.png" alt="Logo" class="nav-logo-img" width="50px">
+            <span>HIMA SI</span>
+        </div>
+
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="Profil.html">Visi & Misi</a></li>
+            <li><a href="Divisi.html">Struktural</a></li>
+            <li><a href="Proker.html">Proker</a></li>
+            <li><a href="Aspirasi.html">Aspirasi</a></li>
+            <li>
+                <a href="Login2.html" aria-label="Login">
+                    <i class="fas fa-sign-in-alt"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="container hero-container">
+            <div class="hero-text">
+                <h1>Selamat Datang</h1>
+                <p>Website Resmi Himpunan Mahasiswa<br>Sistem Informasi Universitas Kuningan</p>
+            </div>
+            <div class="hero-logo">
+                <img src="LOGO HIMA SI BARU.png" alt="Logo Himpunan">
+            </div>
+        </div>
+    </header>
+
+    <section class="kabinet">
+        <div class="container kabinet-container">
+            <div class="kabinet-text">
+                <h2>Kabinet<br>Cakrawala</h2>
+                <p>Keluarga Besar Himpunan Mahasiswa<br>Sistem Informasi</p>
+            </div>
+            <div class="kabinet-logo">
+                <img src="Logo Text Putih.png" alt="Logo Kabinet Cakrawala">
+            </div>
+        </div>
+    </section>
+
+    <section class="visi-misi-section">
+        <div class="container">
+            <div class="visi-misi-card">
+                <div class="visi-content">
+                    <h3>VISI</h3>
+                    <p>Mewujudkan HIMA-SI sebagai organisasi yang berperan dalam mengasah potensi mahasiswa, memperluas hubungan eksternal, dan mengembangkan kapasitas anggota secara keseluruhan.</p>
+                </div>
+                
+                <div class="misi-content">
+                    <h3>MISI</h3>
+                    <ol>
+                        <li>Mendorong dan mengembangkan potensi mahasiswa.</li>
+                        <li>Meningkatkan citra HIMA-SI melalui media dan teknologi untuk memperluas wawasan dan peluang kolaborasi.</li>
+                        <li>Mempererat kekeluargaan dan komunikasi di internal maupun eksternal.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <section class="struktural-section">
+        <div class="container">
+            <h2 class="section-title">STRUKTURAL</h2>
+            <div id="bph-container">
+                <p style="text-align:center; color:white;">Memuat data BPH...</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="divisi-section">
+        <div class="container">
+            <h2 class="section-title">DIVISI</h2>
+            <div class="divisi-container" id="divisi-container">
+                <p style="text-align:center;">Memuat data Divisi...</p>
+            </div>
+        </div>
+    </section>
+
+     <section class="proker-section" id="proker">
+    <div class="container">
+        <div class="proker-card">
+            <h2 class="section-title white-text">PROGRAM KERJA</h2>
+            <div id="proker-container">
+                <p style="text-align:center; color:white;">Sedang memuat data...</p>
+            </div>
+
+        </div>
+        </div>
+    </section>
+
+    <section class="aspirasi-section">
+        <div class="container">
+            
+            <div class="aspirasi-header">
+                <h2 class="aspirasi-title">TENTANG ASPIRASI</h2>
+                <p class="aspirasi-subtitle">Aspirasi Mahasiswa Universitas Kuningan</p>
+            </div>
+
+            <div class="aspirasi-content">
+                <h3>APA ITU ASPIRASI?</h3>
+                <p>Aspirasi adalah sarana bagi mahasiswa Universitas Kuningan untuk menyampaikan kritik, saran, dan masukan kepada pihak universitas secara tertulis, santun, dan bertanggung jawab.</p>
+            </div>
+
+            <div class="aspirasi-content">
+                <h3>MANFAAT ASPIRASI</h3>
+                <ul class="manfaat-list">
+                    <li>Meningkatkan kualitas layanan akademik</li>
+                    <li>Menjadi bahan evaluasi kebijakan universitas</li>
+                    <li>Mendorong transparansi dan komunikasi dua arah</li>
+                </ul>
+            </div>
+
+            <div class="aspirasi-form-wrapper">
+                <h3>Sampaikan Aspirasi Anda</h3>
+                
+                <form name="submit-to-google-sheet" class="aspirasi-form">
+                    
+                    <input type="text" name="Kritik" placeholder="Kritik" class="form-input" required>
+                    <input type="text" name="Saran Perbaikan" placeholder="Saran Perbaikan" class="form-input" required>
+                    
+                    <button type="submit" class="btn-submit">Kirim</button>
+                    <span id="msg" style="display:block; margin-top:10px; color: green;"></span>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="lokasi-wrapper">
+                <h3>Sekretariat HIMA SI</h3>
+                <div class="map-container">
+                    <iframe 
+                        src="https://maps.google.com/maps?q=Kampus+2+Universitas+Kuningan+Jalan+Pramuka+No.67&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                        width="100%" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+
+    <footer class="main-footer">
+        <div class="footer-info">
+            <div class="container">
+                <p class="footer-org">HIMASI FKOM UNIKU</p>
+                <p>Himpunan Mahasiswa Sistem Informasi</p>
+                <p>Fakultas Ilmu Komputer</p>
+                <p>Universitas Kuningan</p>
+                <p class="footer-contact">Email: himasi@fkom.uniku.ac.id | Instagram: @himasi_uniku</p>
+            </div>
+        </div>
+
+        <div class="footer-copyright">
+            <div class="container">
+                <p>&copy; 2024 HIMASI - Sistem Informasi, Universitas Kuningan. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbynznKv9bQqOgapGA6vwd0Iveb_iOpERgcCO3CYlFZ8r9JjsBzZ6hlHAqVUN9Bhv0DiXg/exec';
+        const form = document.forms['submit-to-google-sheet'];
+        const msg = document.getElementById("msg");
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            
+            const btn = document.querySelector('.btn-submit');
+            btn.innerHTML = "Mengirim...";
+            
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    msg.innerHTML = "Terima kasih! Aspirasi Anda telah terkirim.";
+                    btn.innerHTML = "Kirim"; 
+                    form.reset(); 
+                    
+                    setTimeout(function(){
+                        msg.innerHTML = "";
+                    }, 5000);
+                })
+                .catch(error => {
+                    console.error('Error!', error.message);
+                    btn.innerHTML = "Kirim";
+                    msg.style.color = "red";
+                    msg.innerHTML = "Gagal mengirim. Coba lagi.";
+                });
+        });
+
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-links");
+
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        });
+
+        document.querySelectorAll(".nav-links li a").forEach(n => n.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+        }));
+
+        const API_DIVISI = 'https://script.google.com/macros/s/AKfycbxEAjv4lvA0XPdM0rIaq7vAzILsQIjn82QjzvCf_kWjJoe44xTkblMF_aVo57Qvdq4cbQ/exec'; 
+
+        document.addEventListener("DOMContentLoaded", function() {
+            loadDivisi();
+        });
+
+        function loadDivisi() {
+            fetch(API_DIVISI)
+            .then(res => res.json())
+            .then(data => {
+                const bphContainer = document.getElementById('bph-container');
+                const divisiContainer = document.getElementById('divisi-container');
+                
+                // Bersihkan loading text
+                bphContainer.innerHTML = '';
+                divisiContainer.innerHTML = '';
+
+                if (data.length === 0) {
+                    divisiContainer.innerHTML = '<p style="text-align:center;">Belum ada data divisi.</p>';
+                    return;
+                }
+
+                data.forEach(item => {
+                    const nama = item.nama || item.Nama || 'Tanpa Nama';
+                    const deskripsi = item.deskripsi || item.Deskripsi || '-';
+                    const gambar = item.gambar || item.Gambar || 'https://via.placeholder.com/300x200';
+
+                    // Cek apakah ini BPH atau Divisi Biasa?
+                    // Kita cek dari Namanya. Jika mengandung kata "BPH" atau "Badan Pengurus", taruh di atas.
+                    if (nama.toLowerCase().includes('bph') || nama.toLowerCase().includes('badan pengurus')) {
+                        // --- TEMPLATE KHUSUS BPH (Lebih Besar) ---
+                        bphContainer.innerHTML += `
+                        <div class="struktural-card">
+                            <div class="img-wrapper">
+                                <img src="${gambar}" alt="${nama}" class="bph-img">
+                            </div>
+                            <h3>${nama}</h3>
+                            <p>${deskripsi}</p>
+                        </div>
+                        `;
+                    } else {
+                        // --- TEMPLATE DIVISI BIASA ---
+                        divisiContainer.innerHTML += `
+                        <div class="divisi-card">
+                            <div class="img-wrapper">
+                                <img src="${gambar}" alt="${nama}" class="divisi-img">
+                            </div>
+                            <h3>${nama}</h3>
+                            <p>${deskripsi}</p>
+                        </div>
+                        `;
+                    }
+                });
+            })
+            .catch(err => {
+                console.error(err);
+                document.getElementById('divisi-container').innerHTML = '<p style="text-align:center; color:red;">Gagal memuat data.</p>';
+            });
+        }
+
+         const API_PROKER = 'https://script.google.com/macros/s/AKfycbz_gQ8AOP-0GNFOYqT2HY4bBYCfqcH5cuAXSYari_K_FPDlkYRPw2xRq-LUc69Vp-LGsw/exec'; 
+
+    document.addEventListener("DOMContentLoaded", function() {
+        fetchProker();
+    });
+
+    function fetchProker() {
+        // Pastikan di HTML ada div dengan id="proker-container"
+        const container = document.getElementById('proker-container');
+        if(!container) return; // Stop jika wadahnya ga ketemu
+        
+        container.innerHTML = '<p style="text-align:center; color:white;">Sedang memuat data...</p>';
+
+        // PROGRAM KERJA
+        fetch(API_PROKER) 
+            .then(response => response.json())
+            .then(data => {
+                container.innerHTML = ''; // Bersihkan loading
+
+                if (data.length === 0) {
+                    container.innerHTML = '<p style="text-align:center; color:white;">Belum ada proker.</p>';
+                    return;
+                }
+
+                data.forEach((item, index) => {
+                    // Logika Zig-Zag: Ganjil (reverse), Genap (biasa)
+                    const reverseClass = index % 2 !== 0 ? 'reverse-layout' : '';
+                    
+                    // Ambil data (aman dari huruf besar/kecil)
+                    const nama = item.nama || item.Nama || 'Tanpa Judul';
+                    const deskripsi = item.deskripsi || item.Deskripsi || '-';
+                    const gambar = item.gambar || item.Gambar || 'https://via.placeholder.com/400x300';
+
+                    // Masukkan ke HTML
+                    const html = `
+                    <div class="proker-row ${reverseClass}">
+                        <div class="proker-img-wrapper">
+                            <img src="${gambar}" alt="${nama}" class="proker-img">
+                        </div>
+                        <div class="proker-text">
+                            <h3>${nama}</h3>
+                            <p>${deskripsi}</p>
+                        </div>
+                    </div>
+                    `;
+                    
+                    container.innerHTML += html;
+                });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                container.innerHTML = '<p style="text-align:center; color:white;">Gagal memuat data proker.</p>';
+            });
+    }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,611 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+
+/* Reusable Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Navbar Styling --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: #e6e9f0; /* Light grayish/blue background */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #000;
+}
+
+.nav-logo-img {
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #444;
+    font-weight: 550;
+    font-size: 1.0rem;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #003366;
+}
+
+/* --- Hero Section Styling --- */
+.hero {
+    /* IMPORTANT: Replace 'group-photo.jpg' with your background image path.
+       The linear-gradient creates the blue overlay effect seen in your image.
+    */
+    background: 
+                url('Beranda\ poto\ hima.jpeg'); 
+    background-size: cover;
+    background-position: center;
+    height: 900px; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.hero-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.hero-text h1 {
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+.hero-logo img {
+    max-width: 250px; /* Adjust based on actual logo size */
+    height: auto;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+}
+
+/* --- Kabinet Section Styling --- */
+.kabinet {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.kabinet-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.kabinet-text h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #00264d; /* Dark Navy Blue */
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.kabinet-text p {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.5;
+}
+
+.kabinet-logo img {
+    max-width: 350px;
+    height: auto;
+}
+
+/* --- Mobile Responsiveness (Optional) --- */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Simple hide for mobile, normally you'd add a hamburger menu */
+    }
+    
+    .hero {
+        height: auto;
+        padding: 60px 0;
+        text-align: center;
+    }
+    
+    .hero-container, .kabinet-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .kabinet-text {
+        text-align: center;
+    }
+}
+
+/* --- Visi Misi Styling --- */
+.visi-misi-section {
+    padding: 40px 0;
+    margin-bottom: 20px;
+}
+
+.visi-misi-card {
+    background-color: #003366; /* Warna biru gelap sesuai desain */
+    color: white;
+    border-radius: 30px; /* Sudut melengkung */
+    padding: 60px 40px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 51, 102, 0.2);
+}
+
+.visi-content, .misi-content {
+    margin-bottom: 30px;
+}
+
+.visi-misi-card h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.visi-misi-card p, 
+.visi-misi-card li {
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: 300;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Styling untuk list Misi agar rapi di tengah */
+.misi-content ol {
+    display: inline-block;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.misi-content li {
+    margin-bottom: 10px;
+}
+
+/* --- Struktural Section Styling --- */
+.struktural-section {
+    padding: 50px 0 80px 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: #003366;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.struktural-card {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.img-wrapper {
+    margin-bottom: 20px;
+}
+
+.bph-img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%; /* Membuat gambar jadi bulat */
+    border: 5px solid #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.struktural-card h3 {
+    font-size: 1.5rem;
+    color: #003366;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.struktural-card p {
+    color: #444;
+    line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .visi-misi-card {
+        padding: 40px 20px;
+    }
+
+    .misi-content ol {
+        text-align: left;
+        width: 100%;
+    }
+}
+/* --- Divisi Section Styling --- */
+.divisi-section {
+    padding: 20px 0 80px 0; /* Padding atas dikurangi sedikit agar tidak terlalu jauh dari judul */
+    background-color: #fff;
+    text-align: center;
+}
+
+/* Container untuk kartu-kartu divisi */
+.divisi-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Membuat item terakhir otomatis di tengah */
+    gap: 50px; /* Jarak antar kartu */
+}
+
+/* Kartu Individual */
+.divisi-card {
+    flex-basis: 40%; /* Lebar kartu sekitar 40% agar muat 2 per baris */
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+/* Styling Gambar Divisi */
+.divisi-img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #fff; /* Border putih */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Bayangan halus */
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+/* Efek saat gambar disorot mouse (Opsional) */
+.divisi-card:hover .divisi-img {
+    transform: scale(1.05);
+}
+
+/* Judul Divisi */
+.divisi-card h3 {
+    font-size: 1.5rem;
+    color: #003366; /* Warna Biru Navy */
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+}
+
+/* Deskripsi Divisi */
+.divisi-card p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+    max-width: 400px; /* Membatasi lebar teks agar rapi */
+}
+
+/* --- Mobile Responsive untuk Divisi --- */
+@media (max-width: 768px) {
+    .divisi-card {
+        flex-basis: 100%; /* Di HP, kartu mengambil lebar penuh (1 per baris) */
+        padding: 0 10px;
+    }
+    
+    .divisi-img {
+        width: 180px; /* Perkecil gambar sedikit di HP */
+        height: 180px;
+    }
+}
+
+/* --- Program Kerja Section Styling --- */
+.proker-section {
+    padding: 0 0 80px 0;
+}
+
+/* Card Biru Besar */
+.proker-card {
+    background-color: #003366; /* Warna Biru Navy */
+    color: white;
+    border-radius: 30px;
+    padding: 60px 50px;
+    box-shadow: 0 10px 20px rgba(0, 51, 102, 0.2);
+}
+
+/* Judul khusus di dalam background biru */
+.section-title.white-text {
+    color: #ffffff;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+/* Row (Baris) untuk setiap Proker */
+.proker-row {
+    display: flex;
+    align-items: center; /* Vertikal center */
+    gap: 50px; /* Jarak antara gambar dan teks */
+    margin-bottom: 60px; /* Jarak antar item proker */
+}
+
+/* Menghilangkan margin bawah pada item terakhir */
+.proker-row:last-child {
+    margin-bottom: 0;
+}
+
+/* Wrapper Gambar */
+.proker-img-wrapper {
+    flex: 1; /* Mengambil 1 bagian ruang */
+    display: flex;
+    justify-content: center;
+}
+
+.proker-img {
+    width: 100%;
+    max-width: 320px; /* Batas lebar poster */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.proker-img:hover {
+    transform: scale(1.02);
+}
+
+/* Wrapper Teks */
+.proker-text {
+    flex: 1.5; /* Teks mengambil ruang lebih luas dari gambar (1.5 vs 1) */
+    text-align: justify; /* Teks rata kanan-kiri agar rapi */
+}
+
+.proker-text h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #FFD700; /* Warna Emas untuk judul Proker agar kontras */
+}
+
+.proker-text p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #f0f0f0;
+}
+
+/* --- Mobile Responsive untuk Proker --- */
+@media (max-width: 900px) {
+    .proker-card {
+        padding: 40px 20px;
+    }
+
+    .proker-row, 
+    .proker-row.reverse-layout {
+        flex-direction: column; /* Ubah jadi vertikal di HP */
+        gap: 30px;
+    }
+    
+    /* Memastikan urutan di HP selalu Gambar dulu baru Teks */
+    .proker-row.reverse-layout {
+        flex-direction: column-reverse; 
+    }
+
+    .proker-text {
+        text-align: center; /* Di HP lebih bagus rata tengah atau kiri */
+    }
+
+    .proker-text h3 {
+        text-align: center;
+    }
+}
+
+/* --- Aspirasi Section Styling --- */
+.aspirasi-section {
+    padding: 80px 0;
+    background-color: #fff; /* Latar putih */
+    text-align: center;
+    color: #333;
+}
+
+/* Judul Besar */
+.aspirasi-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #003366; /* Biru Navy */
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.aspirasi-subtitle {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 50px;
+}
+
+/* Sub-Judul (Apa itu Aspirasi & Manfaat) */
+.aspirasi-content {
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+}
+
+.aspirasi-content h3 {
+    font-size: 1.5rem;
+    color: #003366;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.aspirasi-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* List Manfaat */
+.manfaat-list {
+    list-style-type: disc; /* Bullet points bulat */
+    display: inline-block; /* Agar list bisa di-tengah tapi text rata kiri */
+    text-align: left;
+    padding-left: 20px;
+    color: #444;
+}
+
+.manfaat-list li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* --- Form Styling --- */
+.aspirasi-form-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.aspirasi-form-wrapper h3 {
+    font-size: 1.5rem;
+    color: #003366;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.aspirasi-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Input Styles */
+.form-input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #333; /* Border hitam tebal sesuai gambar */
+    border-radius: 8px; /* Sudut sedikit melengkung */
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-input:focus {
+    border-color: #003366; /* Warna berubah jadi biru saat diklik */
+}
+
+/* Button Styles */
+.btn-submit {
+    background-color: #003366; /* Biru Navy */
+    color: white;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 150px; /* Lebar tombol */
+    margin: 0 auto; /* Posisi tengah */
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #002244; /* Biru lebih gelap saat hover */
+}
+
+/* --- Footer Styling --- */
+/* --- Footer Styling Terbaru --- */
+.main-footer {
+    width: 100%;
+    margin-top: 0;
+}
+
+/* Bagian Atas (Latar Biru Muda) */
+.footer-info {
+    background-color: #dbe4ef; /* Warna biru muda keabu-abuan sesuai gambar */
+    color: #003366; /* Teks warna biru navy */
+    text-align: center;
+    padding: 40px 0;
+    font-size: 1rem;
+    line-height: 1.8; /* Jarak antar baris agar rapi */
+}
+
+.footer-org {
+    font-weight: 700; /* Teks HIMASI FKOM UNIKU tebal */
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.footer-contact {
+    margin-top: 15px; /* Jarak sedikit sebelum kontak */
+    font-weight: 500;
+}
+
+/* Bagian Bawah (Latar Biru Tua/Navy) */
+.footer-copyright {
+    background-color: #003366; /* Warna biru gelap utama */
+    color: white; /* Teks putih */
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+.lokasi-wrapper {
+    margin-top: 60px; /* Jarak dari form ke peta */
+    text-align: center;
+}
+
+.lokasi-wrapper h3 {
+    font-size: 1.5rem;
+    color: #003366;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.map-container {
+    width: 100%;
+    max-width: 1000px; /* Lebar maksimal peta */
+    margin: 0 auto;
+    border-radius: 15px; /* Membuat sudut peta melengkung */
+    overflow: hidden; /* Memastikan isi peta mengikuti lengkungan border */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15); /* Bayangan agar terlihat timbul */
+    border: 5px solid #fff; /* Bingkai putih di sekeliling peta */
+}
+
+/* Responsif untuk HP */
+@media (max-width: 768px) {
+    .map-container iframe {
+        height: 300px; /* Tinggi peta dikurangi sedikit di layar HP */
+    }
+}
