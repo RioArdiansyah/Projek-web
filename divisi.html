@@ -1,93 +1,90 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HIMA SI - Kabinet Cakrawala</title>
+    <title>Divisi</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_divisi_anggota.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-
-    <nav class="navbar">
+      <nav class="navbar">
         <div class="nav-brand">
             <img src="image/LOGO HIMA SI BARU.png" alt="Logo" class="nav-logo-img" width="50px">
             <span>HIMA SI</span>
         </div>
+
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
         <ul class="nav-links">
             <li><a href="index.html">Beranda</a></li>
-            <li><a href="Profil.html">Profil</a></li>
-            <li><a href="Divisi.html">Divisi</a></li>
+            <li><a href="Profil.html">Visi & Misi</a></li>
+            <li><a href="Divisi.html">Struktural</a></li>
             <li><a href="Proker.html">Proker</a></li>
             <li><a href="Aspirasi.html">Aspirasi</a></li>
+             <li>
+                <a href="Login2.html" aria-label="Login">
+                    <i class="fas fa-sign-in-alt"></i>
+                </a>
+            </li>
         </ul>
     </nav>
- 
- <section class="struktural-section">
+
+    <section class="struktural-section">
         <div class="container">
             <h2 class="section-title">STRUKTURAL</h2>
-            
-            <div class="struktural-card">
-                <div class="img-wrapper">
-                    <img src="image/BPH.jpeg" alt="Badan Pengurus Harian" class="bph-img">
-                </div>
-                
-                <h3>Badan Pengurus Harian</h3>
-                <p>Mewujudkan HIMA-SI sebagai organisasi yang berperan dalam mengasah potensi mahasiswa, memperluas hubungan eksternal, dan mengembangkan kapasitas anggota secara keseluruhan.</p>
+            <div id="bph-container">
+                <p style="text-align:center; color:white;">Memuat data BPH...</p>
             </div>
         </div>
     </section>
+
     <section class="divisi-section">
         <div class="container">
             <h2 class="section-title">DIVISI</h2>
-
-            <div class="divisi-container">
-                
-                <div class="divisi-card">
-                    <div class="img-wrapper">
-                        <img src="image/KEOR.jpeg" alt="Keorganisasian" class="divisi-img">
-                    </div>
-                    <h3>Keorganisasian</h3>
-                    <p>Mewujudkan HIMA-SI sebagai organisasi yang berperan dalam mengasah potensi mahasiswa, memperluas hubungan eksternal, dan mengembangkan kapasitas anggota secara keseluruhan.</p>
-                </div>
-
-                <div class="divisi-card">
-                    <div class="img-wrapper">
-                        <img src="image/KOS.jpeg" alt="KOS" class="divisi-img">
-                    </div>
-                    <h3>Keagamaan Olahraga dan Sosial</h3>
-                    <p>Mewujudkan HIMA-SI sebagai organisasi yang berperan dalam mengasah potensi mahasiswa, memperluas hubungan eksternal, dan mengembangkan kapasitas anggota secara keseluruhan.</p>
-                </div>
-
-                <div class="divisi-card">
-                    <div class="img-wrapper">
-                        <img src="image/MEDTEK.jpeg" alt="MEDTEK" class="divisi-img">
-                    </div>
-                    <h3>Media Informasi & Teknologi</h3>
-                    <p>Mewujudkan HIMA-SI sebagai organisasi yang berperan dalam mengasah potensi mahasiswa, memperluas hubungan eksternal, dan mengembangkan kapasitas anggota secara keseluruhan.</p>
-                </div>
-
-                <div class="divisi-card">
-                    <div class="img-wrapper">
-                        <img src="image/PR.jpeg" alt="Publik Relation" class="divisi-img">
-                    </div>
-                    <h3>Publik Relation</h3>
-                    <p>Mewujudkan HIMA-SI sebagai organisasi yang berperan dalam mengasah potensi mahasiswa, memperluas hubungan eksternal, dan mengembangkan kapasitas anggota secara keseluruhan.</p>
-                </div>
-
-                <div class="divisi-card">
-                    <div class="img-wrapper">
-                        <img src="image/LITBANG.jpeg" alt="Litbang" class="divisi-img">
-                    </div>
-                    <h3>Penelitian & Pengembangan</h3>
-                    <p>Mewujudkan HIMA-SI sebagai organisasi yang berperan dalam mengasah potensi mahasiswa, memperluas hubungan eksternal, dan mengembangkan kapasitas anggota secara keseluruhan.</p>
-                </div>
-
+            <div class="divisi-container" id="divisi-container">
+                <p style="text-align:center;">Memuat data Divisi...</p>
             </div>
         </div>
     </section>
 
-<footer class="main-footer">
+    <section class="anggota-section">
+        <div class="container">
+            <h2 class="section-title">Anggota Himpunan Mahasiswa Sistem Informasi</h2>
+
+            <div class="search-container">
+                <label for="searchAnggota" class="search-label">Cari Anggota :</label>
+                <input type="text" id="searchAnggota" class="search-input" placeholder="Ketik Nama...">
+                <button type="button" id="btnCari" class="btn-cari">Cari</button>
+            </div>
+
+            <div class="table-wrapper">
+                <table class="custom-table">
+                    <thead>
+                        <tr>
+                            <th>Nama</th> 
+                            <th>Jabatan</th>
+                            <th>Divisi</th>
+                            <th>Angkatan</th>
+                        </tr>
+                    </thead>
+                    <tbody id="anggotaTableBody">
+                        <tr>
+                            <td colspan="4" style="text-align:center; padding: 20px;">Sedang memuat data...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
         <div class="footer-info">
             <div class="container">
                 <p class="footer-org">HIMASI FKOM UNIKU</p>
@@ -105,5 +102,142 @@
         </div>
     </footer>
 
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-links");
+
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        });
+
+        document.querySelectorAll(".nav-links li a").forEach(n => n.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+        }));
+
+        const API_DIVISI = 'https://script.google.com/macros/s/AKfycbxEAjv4lvA0XPdM0rIaq7vAzILsQIjn82QjzvCf_kWjJoe44xTkblMF_aVo57Qvdq4cbQ/exec'; 
+
+        document.addEventListener("DOMContentLoaded", function() {
+            loadDivisi();
+        });
+
+        function loadDivisi() {
+            fetch(API_DIVISI)
+            .then(res => res.json())
+            .then(data => {
+                const bphContainer = document.getElementById('bph-container');
+                const divisiContainer = document.getElementById('divisi-container');
+                
+                // Bersihkan loading text
+                bphContainer.innerHTML = '';
+                divisiContainer.innerHTML = '';
+
+                if (data.length === 0) {
+                    divisiContainer.innerHTML = '<p style="text-align:center;">Belum ada data divisi.</p>';
+                    return;
+                }
+
+                data.forEach(item => {
+                    const nama = item.nama || item.Nama || 'Tanpa Nama';
+                    const deskripsi = item.deskripsi || item.Deskripsi || '-';
+                    const gambar = item.gambar || item.Gambar || 'https://via.placeholder.com/300x200';
+
+                    // Cek apakah ini BPH atau Divisi Biasa?
+                    // Kita cek dari Namanya. Jika mengandung kata "BPH" atau "Badan Pengurus", taruh di atas.
+                    if (nama.toLowerCase().includes('bph') || nama.toLowerCase().includes('badan pengurus')) {
+                        // --- TEMPLATE KHUSUS BPH (Lebih Besar) ---
+                        bphContainer.innerHTML += `
+                        <div class="struktural-card">
+                            <div class="img-wrapper">
+                                <img src="${gambar}" alt="${nama}" class="bph-img">
+                            </div>
+                            <h3>${nama}</h3>
+                            <p>${deskripsi}</p>
+                        </div>
+                        `;
+                    } else {
+                        // --- TEMPLATE DIVISI BIASA ---
+                        divisiContainer.innerHTML += `
+                        <div class="divisi-card">
+                            <div class="img-wrapper">
+                                <img src="${gambar}" alt="${nama}" class="divisi-img">
+                            </div>
+                            <h3>${nama}</h3>
+                            <p>${deskripsi}</p>
+                        </div>
+                        `;
+                    }
+                });
+            })
+            .catch(err => {
+                console.error(err);
+                document.getElementById('divisi-container').innerHTML = '<p style="text-align:center; color:red;">Gagal memuat data.</p>';
+            });
+        }
+
+    const scriptURLAnggota = 'https://script.google.com/macros/s/AKfycbxVNHpdMHPUcNEATV5SgxsFq7TsdrGj9vRNEKGpHwPgo_O0wUurunzy7ges3nTjt2ry/exec'; 
+
+    const tableBody = document.getElementById('anggotaTableBody');
+    const searchInput = document.getElementById('searchAnggota');
+    let originalData = []; // Untuk menyimpan data asli agar pencarian cepat
+
+    // Fungsi Fetch Data
+    fetch(scriptURLAnggota)
+        .then(response => response.json())
+        .then(data => {
+            originalData = data; // Simpan data ke variabel global
+            renderTable(data);   // Tampilkan data
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            tableBody.innerHTML = '<tr><td colspan="4">Gagal memuat data. Cek koneksi internet.</td></tr>';
+        });
+
+    // Fungsi Menampilkan Tabel
+    function renderTable(data) {
+        let html = '';
+        if(data.length === 0) {
+            html = '<tr><td colspan="4">Data tidak ditemukan.</td></tr>';
+        } else {
+            data.forEach(row => {
+               
+                html += `
+                    <tr>
+                        <td><b>${row.NIM || row.Nama}</b></td> <td>${row.Jabatan}</td>
+                        <td>${row.Divisi}</td>
+                        <td>${row.Angkatan}</td>
+                    </tr>
+                `;
+            });
+        }
+        tableBody.innerHTML = html;
+    }
+
+    // Fungsi Pencarian
+// --- UPDATE SCRIPT PENCARIAN (INPUT + TOMBOL) ---
+    const btnCari = document.getElementById('btnCari');
+
+    // 1. Buat Fungsi Pencarian Terpisah
+    function performSearch() {
+        const value = searchInput.value.toLowerCase();
+        
+       
+        if (originalData.length === 0) return;
+
+        const filteredData = originalData.filter(row => {
+            const stringData = `${row.NIM || ''} ${row.Nama || ''} ${row.Jabatan || ''} ${row.Divisi || ''} ${row.Angkatan || ''}`.toLowerCase();
+            return stringData.includes(value);
+        });
+
+        renderTable(filteredData);
+    }
+
+    // 2. Jalankan saat mengetik (Live Search)
+    searchInput.addEventListener('keyup', performSearch);
+
+    // 3. Jalankan saat tombol "CARI" diklik
+    btnCari.addEventListener('click', performSearch);
+    </script>
 </body>
 </html>

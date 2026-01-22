@@ -1,41 +1,42 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HIMA SI - Kabinet Cakrawala</title>
+    <title>Profil</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-
-    <nav class="navbar">
+    
+   <nav class="navbar">
         <div class="nav-brand">
             <img src="image/LOGO HIMA SI BARU.png" alt="Logo" class="nav-logo-img" width="50px">
             <span>HIMA SI</span>
         </div>
+
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
         <ul class="nav-links">
             <li><a href="index.html">Beranda</a></li>
-            <li><a href="Profil.html">Profil</a></li>
-            <li><a href="Divisi.html">Divisi</a></li>
+            <li><a href="Profil.html">Visi & Misi</a></li>
+            <li><a href="Divisi.html">Struktural</a></li>
             <li><a href="Proker.html">Proker</a></li>
             <li><a href="Aspirasi.html">Aspirasi</a></li>
+             <li>
+                <a href="Login2.html" aria-label="Login">
+                    <i class="fas fa-sign-in-alt"></i>
+                </a>
+            </li>
         </ul>
     </nav>
 
-    <header class="hero">
-        <div class="container hero-container">
-            <div class="hero-text">
-                <h1>Selamat Datang</h1>
-                <p>Website Resmi Himpunan Mahasiswa<br>Sistem Informasi Universitas Kuningan</p>
-            </div>
-            <div class="hero-logo">
-                <img src="image/LOGO HIMA SI BARU.png" alt="Logo Himpunan">
-            </div>
-        </div>
-    </header>
- 
- <section class="kabinet">
+    <section class="kabinet">
         <div class="container kabinet-container">
             <div class="kabinet-text">
                 <h2>Kabinet<br>Cakrawala</h2>
@@ -66,7 +67,6 @@
             </div>
         </div>
     </section>
-
     <footer class="main-footer">
         <div class="footer-info">
             <div class="container">
@@ -85,5 +85,19 @@
         </div>
     </footer>
 
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-links");
+
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        });
+
+        document.querySelectorAll(".nav-links li a").forEach(n => n.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+        }));
+    </script>
 </body>
 </html>

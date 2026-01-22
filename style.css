@@ -10,24 +10,23 @@ body {
     color: #333;
 }
 
-/* Reusable Container */
 .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* --- Navbar Styling --- */
+/* Navbar Section */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 5%;
-    background-color: #e6e9f0; /* Light grayish/blue background */
+    background-color: #e6e9f0;
     position: sticky;
     top: 0;
-    z-index: 100;
-    
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .nav-brand {
@@ -45,15 +44,16 @@ body {
 
 .nav-links {
     list-style: none;
-    display: flex;
+    display: flex; 
     gap: 30px;
+    align-items: center;
 }
 
 .nav-links li a {
     text-decoration: none;
     color: #444;
-    font-weight: 550;
-    font-size: 1.0rem;
+    font-weight: 500;
+    font-size: 0.95rem;
     transition: color 0.3s;
 }
 
@@ -61,16 +61,97 @@ body {
     color: #003366;
 }
 
-/* --- Hero Section Styling --- */
+.hamburger {
+    display: none; 
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: #333;
+}
+
+/* Navbar Responsive */
+@media (max-width: 768px) {
+    
+    .hamburger {
+        display: block !important;
+        cursor: pointer;
+    }
+
+    .nav-links {
+        position: absolute !important;
+        top: 70px !important; 
+        right: 20px !important; 
+        width: 150px !important; 
+        height: auto !important;
+        background-color: #ffffff !important;
+        border-radius: 8px !important;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2) !important;
+        border: 1px solid #ddd !important; 
+        display: none !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        padding: 15px !important; 
+        gap: 10px !important;
+        z-index: 1000 !important;
+    }
+
+    .nav-links.active {
+        display: flex !important;
+    }
+
+    .nav-links li {
+        margin: 0 !important;
+        width: 100% !important;
+    }
+
+    .nav-links li a {
+        font-size: 0.9rem !important;
+        color: #333 !important;
+        display: block !important;
+        width: 100% !important;
+    }
+    
+    .nav-links li a:hover {
+        color: #003366 !important;
+        background-color: #f0f4f8;
+        border-radius: 4px;
+        padding-left: 5px;
+    }
+
+    .hamburger.active .bar:nth-child(2) { opacity: 0; }
+    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #003366;
+}
+/* Khusus untuk ikon login agar sedikit lebih besar */
+.nav-links li a i {
+    font-size: 1.2rem; /* Ukuran ikon */
+    transition: color 0.3s ease;
+}
+
+/* Hero Section */
 .hero {
-    /* IMPORTANT: Replace 'group-photo.jpg' with your background image path.
-       The linear-gradient creates the blue overlay effect seen in your image.
-    */
-    background: 
-                url('Beranda\ poto\ hima.jpeg'); 
+    background: url('Image/Beranda\ poto\ hima.jpeg'); 
     background-size: cover;
     background-position: center;
-    height: 900px; /* Adjust height as needed */
+    height: 900px; 
     display: flex;
     align-items: center;
     color: white;
@@ -96,12 +177,12 @@ body {
 }
 
 .hero-logo img {
-    max-width: 250px; /* Adjust based on actual logo size */
+    max-width: 250px;
     height: auto;
     filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
 }
 
-/* --- Kabinet Section Styling --- */
+/* Kabinet Section */
 .kabinet {
     padding: 80px 0;
     background-color: #fff;
@@ -116,7 +197,7 @@ body {
 .kabinet-text h2 {
     font-size: 3rem;
     font-weight: 700;
-    color: #00264d; /* Dark Navy Blue */
+    color: #00264d;
     line-height: 1.2;
     margin-bottom: 20px;
 }
@@ -132,10 +213,9 @@ body {
     height: auto;
 }
 
-/* --- Mobile Responsiveness (Optional) --- */
 @media (max-width: 768px) {
     .nav-links {
-        display: none; /* Simple hide for mobile, normally you'd add a hamburger menu */
+        display: none; 
     }
     
     .hero {
@@ -158,16 +238,16 @@ body {
     }
 }
 
-/* --- Visi Misi Styling --- */
+/* Visi Misi Section */
 .visi-misi-section {
     padding: 40px 0;
     margin-bottom: 20px;
 }
 
 .visi-misi-card {
-    background-color: #003366; /* Warna biru gelap sesuai desain */
+    background-color: #003366; 
     color: white;
-    border-radius: 30px; /* Sudut melengkung */
+    border-radius: 30px; 
     padding: 60px 40px;
     text-align: center;
     box-shadow: 0 10px 20px rgba(0, 51, 102, 0.2);
@@ -195,7 +275,6 @@ body {
     margin-right: auto;
 }
 
-/* Styling untuk list Misi agar rapi di tengah */
 .misi-content ol {
     display: inline-block;
     text-align: left;
@@ -206,7 +285,7 @@ body {
     margin-bottom: 10px;
 }
 
-/* --- Struktural Section Styling --- */
+/* Struktural Section */
 .struktural-section {
     padding: 50px 0 80px 0;
     background-color: #fff;
@@ -234,7 +313,7 @@ body {
     width: 250px;
     height: 250px;
     object-fit: cover;
-    border-radius: 50%; /* Membuat gambar jadi bulat */
+    border-radius: 50%; 
     border: 5px solid #fff;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
@@ -251,7 +330,6 @@ body {
     line-height: 1.6;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .visi-misi-card {
         padding: 40px 20px;
@@ -262,24 +340,23 @@ body {
         width: 100%;
     }
 }
-/* --- Divisi Section Styling --- */
+
+/* Divisi Section */
 .divisi-section {
-    padding: 20px 0 80px 0; /* Padding atas dikurangi sedikit agar tidak terlalu jauh dari judul */
+    padding: 20px 0 80px 0; 
     background-color: #fff;
     text-align: center;
 }
 
-/* Container untuk kartu-kartu divisi */
 .divisi-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Membuat item terakhir otomatis di tengah */
-    gap: 50px; /* Jarak antar kartu */
+    justify-content: center; 
+    gap: 50px; 
 }
 
-/* Kartu Individual */
 .divisi-card {
-    flex-basis: 40%; /* Lebar kartu sekitar 40% agar muat 2 per baris */
+    flex-basis: 40%;
     max-width: 500px;
     display: flex;
     flex-direction: column;
@@ -287,97 +364,96 @@ body {
     margin-bottom: 30px;
 }
 
-/* Styling Gambar Divisi */
 .divisi-img {
     width: 220px;
     height: 220px;
     object-fit: cover;
     border-radius: 50%;
-    border: 5px solid #fff; /* Border putih */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Bayangan halus */
+    border: 5px solid #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     margin-bottom: 20px;
     transition: transform 0.3s ease;
 }
 
-/* Efek saat gambar disorot mouse (Opsional) */
 .divisi-card:hover .divisi-img {
     transform: scale(1.05);
 }
 
-/* Judul Divisi */
 .divisi-card h3 {
     font-size: 1.5rem;
-    color: #003366; /* Warna Biru Navy */
+    color: #003366;
     font-weight: 700;
     margin-bottom: 15px;
     text-transform: capitalize;
 }
 
-/* Deskripsi Divisi */
 .divisi-card p {
     font-size: 0.95rem;
     color: #555;
     line-height: 1.6;
-    max-width: 400px; /* Membatasi lebar teks agar rapi */
+    max-width: 400px;
 }
 
-/* --- Mobile Responsive untuk Divisi --- */
 @media (max-width: 768px) {
     .divisi-card {
-        flex-basis: 100%; /* Di HP, kartu mengambil lebar penuh (1 per baris) */
+        flex-basis: 100%; 
         padding: 0 10px;
     }
     
     .divisi-img {
-        width: 180px; /* Perkecil gambar sedikit di HP */
+        width: 180px;
         height: 180px;
     }
 }
 
-/* --- Program Kerja Section Styling --- */
+/* --- STYLE PROKER (SESUAI REQUEST) --- */
+
 .proker-section {
     padding: 0 0 80px 0;
+    background-color: transparent; 
 }
 
-/* Card Biru Besar */
+/* Ini Kotak Biru-nya */
 .proker-card {
-    background-color: #003366; /* Warna Biru Navy */
+    background-color: #003366;
     color: white;
     border-radius: 30px;
     padding: 60px 50px;
     box-shadow: 0 10px 20px rgba(0, 51, 102, 0.2);
+    margin-top: 50px; /* Jarak tambahan dari atas */
 }
 
-/* Judul khusus di dalam background biru */
 .section-title.white-text {
     color: #ffffff;
     margin-bottom: 60px;
     text-align: center;
 }
 
-/* Row (Baris) untuk setiap Proker */
 .proker-row {
     display: flex;
-    align-items: center; /* Vertikal center */
-    gap: 50px; /* Jarak antara gambar dan teks */
-    margin-bottom: 60px; /* Jarak antar item proker */
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 60px;
 }
 
-/* Menghilangkan margin bawah pada item terakhir */
+/* Tambahan: Agar Zig-Zag jalan di Desktop */
+.proker-row.reverse-layout {
+    flex-direction: row-reverse;
+}
+
 .proker-row:last-child {
     margin-bottom: 0;
 }
 
-/* Wrapper Gambar */
 .proker-img-wrapper {
-    flex: 1; /* Mengambil 1 bagian ruang */
+    flex: 1;
     display: flex;
     justify-content: center;
 }
 
 .proker-img {
     width: 100%;
-    max-width: 320px; /* Batas lebar poster */
+    max-width: 320px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     transition: transform 0.3s ease;
@@ -387,17 +463,16 @@ body {
     transform: scale(1.02);
 }
 
-/* Wrapper Teks */
 .proker-text {
-    flex: 1.5; /* Teks mengambil ruang lebih luas dari gambar (1.5 vs 1) */
-    text-align: justify; /* Teks rata kanan-kiri agar rapi */
+    flex: 1.5;
+    text-align: justify; 
 }
 
 .proker-text h3 {
     font-size: 1.8rem;
     font-weight: 700;
     margin-bottom: 20px;
-    color: #FFD700; /* Warna Emas untuk judul Proker agar kontras */
+    color: #FFD700; /* Warna Kuning Emas */
 }
 
 .proker-text p {
@@ -406,7 +481,6 @@ body {
     color: #f0f0f0;
 }
 
-/* --- Mobile Responsive untuk Proker --- */
 @media (max-width: 900px) {
     .proker-card {
         padding: 40px 20px;
@@ -414,17 +488,16 @@ body {
 
     .proker-row, 
     .proker-row.reverse-layout {
-        flex-direction: column; /* Ubah jadi vertikal di HP */
+        flex-direction: column;
         gap: 30px;
     }
     
-    /* Memastikan urutan di HP selalu Gambar dulu baru Teks */
     .proker-row.reverse-layout {
-        flex-direction: column-reverse; 
+        flex-direction: column-reverse; /* Gambar tetap di atas saat di HP */
     }
 
     .proker-text {
-        text-align: center; /* Di HP lebih bagus rata tengah atau kiri */
+        text-align: center;
     }
 
     .proker-text h3 {
@@ -432,19 +505,19 @@ body {
     }
 }
 
-/* --- Aspirasi Section Styling --- */
+
+/* Aspirasi Section */
 .aspirasi-section {
     padding: 80px 0;
-    background-color: #fff; /* Latar putih */
+    background-color: #fff;
     text-align: center;
     color: #333;
 }
 
-/* Judul Besar */
 .aspirasi-title {
     font-size: 2rem;
     font-weight: 700;
-    color: #003366; /* Biru Navy */
+    color: #003366;
     margin-bottom: 10px;
     text-transform: uppercase;
 }
@@ -455,7 +528,6 @@ body {
     margin-bottom: 50px;
 }
 
-/* Sub-Judul (Apa itu Aspirasi & Manfaat) */
 .aspirasi-content {
     max-width: 800px;
     margin: 0 auto 50px auto;
@@ -475,10 +547,9 @@ body {
     color: #444;
 }
 
-/* List Manfaat */
 .manfaat-list {
-    list-style-type: disc; /* Bullet points bulat */
-    display: inline-block; /* Agar list bisa di-tengah tapi text rata kiri */
+    list-style-type: disc;
+    display: inline-block;
     text-align: left;
     padding-left: 20px;
     color: #444;
@@ -489,7 +560,7 @@ body {
     line-height: 1.5;
 }
 
-/* --- Form Styling --- */
+/* Form Section */
 .aspirasi-form-wrapper {
     max-width: 600px;
     margin: 0 auto;
@@ -508,12 +579,11 @@ body {
     gap: 20px;
 }
 
-/* Input Styles */
 .form-input {
     width: 100%;
     padding: 15px;
-    border: 2px solid #333; /* Border hitam tebal sesuai gambar */
-    border-radius: 8px; /* Sudut sedikit melengkung */
+    border: 2px solid #333;
+    border-radius: 8px;
     font-size: 1rem;
     font-family: 'Poppins', sans-serif;
     outline: none;
@@ -521,12 +591,11 @@ body {
 }
 
 .form-input:focus {
-    border-color: #003366; /* Warna berubah jadi biru saat diklik */
+    border-color: #003366;
 }
 
-/* Button Styles */
 .btn-submit {
-    background-color: #003366; /* Biru Navy */
+    background-color: #003366;
     color: white;
     padding: 12px 30px;
     font-size: 1rem;
@@ -534,54 +603,53 @@ body {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    width: 150px; /* Lebar tombol */
-    margin: 0 auto; /* Posisi tengah */
+    width: 150px;
+    margin: 0 auto;
     transition: background-color 0.3s ease;
 }
 
 .btn-submit:hover {
-    background-color: #002244; /* Biru lebih gelap saat hover */
+    background-color: #002244;
 }
 
-/* --- Footer Styling --- */
-/* --- Footer Styling Terbaru --- */
+/* Footer Section */
 .main-footer {
     width: 100%;
     margin-top: 0;
 }
 
-/* Bagian Atas (Latar Biru Muda) */
 .footer-info {
-    background-color: #dbe4ef; /* Warna biru muda keabu-abuan sesuai gambar */
-    color: #003366; /* Teks warna biru navy */
+    background-color: #dbe4ef;
+    color: #003366;
     text-align: center;
     padding: 40px 0;
     font-size: 1rem;
-    line-height: 1.8; /* Jarak antar baris agar rapi */
+    line-height: 1.8;
 }
 
 .footer-org {
-    font-weight: 700; /* Teks HIMASI FKOM UNIKU tebal */
+    font-weight: 700; 
     text-transform: uppercase;
     margin-bottom: 5px;
 }
 
 .footer-contact {
-    margin-top: 15px; /* Jarak sedikit sebelum kontak */
+    margin-top: 15px; 
     font-weight: 500;
 }
 
-/* Bagian Bawah (Latar Biru Tua/Navy) */
 .footer-copyright {
-    background-color: #003366; /* Warna biru gelap utama */
-    color: white; /* Teks putih */
+    background-color: #003366;
+    color: white;
     text-align: center;
     padding: 15px 0;
     font-size: 0.9rem;
     font-weight: 400;
 }
+
+/* Lokasi Section */
 .lokasi-wrapper {
-    margin-top: 60px; /* Jarak dari form ke peta */
+    margin-top: 60px;
     text-align: center;
 }
 
@@ -595,17 +663,16 @@ body {
 
 .map-container {
     width: 100%;
-    max-width: 1000px; /* Lebar maksimal peta */
+    max-width: 1000px;
     margin: 0 auto;
-    border-radius: 15px; /* Membuat sudut peta melengkung */
-    overflow: hidden; /* Memastikan isi peta mengikuti lengkungan border */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15); /* Bayangan agar terlihat timbul */
-    border: 5px solid #fff; /* Bingkai putih di sekeliling peta */
+    border-radius: 15px; 
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    border: 5px solid #fff;
 }
 
-/* Responsif untuk HP */
 @media (max-width: 768px) {
     .map-container iframe {
-        height: 300px; /* Tinggi peta dikurangi sedikit di layar HP */
+        height: 300px; 
     }
 }
